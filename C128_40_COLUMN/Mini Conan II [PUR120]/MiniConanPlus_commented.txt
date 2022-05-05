@@ -1,0 +1,165 @@
+
+EXPANDED CODE (CBM Prg Studio syntax)
+0z=1:e=100:color0,7:r$="return":v=1:fori=1to5:w(i)=5:readj$(i),m$(i),p(i),e$(i):v(i)=2+i+4*(iand1):data"{light green}plains","{cyan}potion{yellow}":next
+1deffnf(x)=int(n*n*x*x/(9+rnd(1)*45)):g=e:b=2:f=1:data50,"{light green}trolls","{green}woods","{light green}boots{yellow}",120,"{orange}kobolds","{orange}desert","{gray}armor{yellow}",300
+2color4,7:scnclr:gosub9:fori=1to4:print"{white}"i;j$(i):next:getkeyj$:j=val(j$):on-(j<4andj>.)goto4:gosub9:printj$(4):fori=1to3:print"{white}"i"{dark gray}"w(i)m$(i)p(i):next
+3print" {white}4"m$(4):getkeyj$:j=val(j$):on-(g<p(j)orw(j)=.)goto2:e=e-(j=1)*20:b=b-(j=2)*5:z=z-(j=3):g=g-p(j):w(j)=w(j)-1:goto2
+4y$="{orange}lost":fork=.to1:fori=1toj*3:print"{clear}":printj$(j):print"{down}{white}day{light gray}"i;q$:r=1+rnd(1)*(j+1):n=2+int(rnd(1)*(2*j+t)):printn;e$(r)" {white}attack you!"
+5gosub9:ife>.thenprint"{light gray}1.fight":print"2.run away{down}":getkeyj$:a=val(j$):a=aand1:h=fnf(v(r+1)/(1+z/2)):h=a*h-f:ifh>.thenprinty$;h:e=e-h:vol15:vol.
+6ife<1thenprintz$:sleep4:gosub9:getkeyk$:run:elseifathenprint"{white}{down}{X} {cyan}1 dies":sleep1:f=f+1:n=n-1:ifn<1thenp%=1+r:print"{yellow}${white}"p%:g=g+p%:sleep1:goto8:elseif-agoto5
+7m=fnf(v(r)):ifa=0andm>vandb<1thenx%=1+m/9/z:printy$;x%:e=e-x%:vol9:vol.:sleep1:goto5:elseifa=0thenprint"{cyan}you escaped!":sleep2:v=v+1:b=b+(b>.)
+8z$="{orange}{down}end":next:p%=j*j*7+rnd(1)*9:ifk=.thent=t+.2-(t>2)*.2:q$=r$:print"reward {yellow}${white}{007}"p%:g=g+p%:sleep2:next:elseq$="":next:w(1)=w(1)+1:goto2
+9print"{down*2}{orange}S{pink}"e" {orange}po{white}"f"{cyan}sp{white}"v"{light green}bo{green}"b"{gray}ar{light gray}"z"{yellow}${white}"g:print"{down}{gray}score{white}";v+f-2:print:return:data"{green}elves","{cyan}{reverse on}merchant{reverse off}{down}","{gray} exit{down}",,"{orange}demons",,,,
+
+VARIABLES
+e energy
+f player's power
+v player's speed
+b boots level
+z armor upgrade level
+g money
+w(i) number of the i-th items
+m$(i) i-th item string
+p(i) price of the i-th item
+e$(i) i-th enemy string
+v(i) i-th enemy's power and (i-1)-th enemy's speed
+h computed enemy attack force in a fight
+m computed effective enemy speed in an escape attempt
+
+
+EXPLAINED CODE
+
+0
+
+// Initialize variables: 1 initial armor, initial energy = 100, initial speed = 1
+z=1:e=100:color0,7:r$="return":v=1:
+
+// Read game settings (name of the i-th quest or merchant, number of i-items, name of the i-th item, price of the i-th item, name of the i-th enemy, 
+fori=1to5:w(i)=5:readj$(i),m$(i),p(i),e$(i):
+
+// strentgh factor of the i-th enemy
+v(i)=2+i+4*(iand1):
+
+// Some game settings
+data"{light green}plains","{cyan}potion{yellow}":next
+
+
+1
+
+// strength/speed strength function
+deffnf(x)=int(n*n*x*x/(9+rnd(1)*45)):
+
+// energy and gold = 100, 5 initial boots, 1 initial force
+g=e:b=2:f=1:
+
+// Some game settings
+data50,"{light green}trolls","{green}woods","{light green}boots{yellow}",100,"{orange}kobolds","{orange}desert","{gray}armor{yellow}",300
+
+
+2
+
+// Set color to cyan. Display the inn and the stats. Display the list of quests. Wait for key press. 
+color4,7:scnclr:gosub9:fori=1to4:print"{white}"i;j$(i):next:getkeyj$:j=val(j$)
+
+// If selection is 1,2 or 3 than goto to 4
+on-(j<4andj>.)goto4:
+
+// Otherwise display stats and the merchant menu
+gosub9:printj$(4):fori=1to3:print"{white}"i"{dark gray}"w(i)m$(i)p(i):next
+
+
+3
+
+// Display "merchant"
+print" {white}4"m$(4):
+
+// Wait for input. If input is invalid or exit, then go back to 2
+getkeyj$:j=val(j$):on-(j=4org<p(j)orw(j)=.)goto2:
+
+// Increase selected stat (energy with potion, boots, armor).  Reduce number of available item. Substract spent gold. Go back to 2
+e=e-(j=1)*20:b=b-(j=2)*8:z=z-(j=3):g=g-p(j):w(j)=w(j)-1:goto2
+
+
+4
+
+// Initialization
+y$="{orange}lost":
+
+// Quest loop (j*3 days for the way there and back)
+fork=.to1:fori=1toj*3:
+
+// Display number of day on the journey
+print"{clear}":printj$(j):print"{down}{white}day{light gray}"i;q$:
+
+// Select enemy type
+r=1+rnd(1)*(j+1):
+
+// Select number of enemies
+n=2+int(rnd(1)*(2*j+t)):
+
+// Display number and type of enemies that attack you
+printn;e$(r)" {white}attack you!"
+
+
+5
+
+// Display stats
+gosub9:
+
+// If still alive, display selection fight vs run
+ife>.thenprint"{light gray}1.fight":print"2.run away{down}":
+
+// Wait for input
+getkeyj$:a=val(j$):a=aand1:
+
+// Compute h, the strength/speed of the enemies
+h=fnf(v(r+1)/(1+z/2)):h=a*h-f:
+
+// If in a fight, if h is bigger than f, then you lose h energy. A click sound is produced
+ifh>.thenprinty$;h:e=e-h:vol15:vol.
+
+
+6
+
+// if no energy left, wait 4 seconds, show stats, wait for a key, restart the game, else if in a fight, then display "1 dies", wait 1 sec, increase your strength, reduce number of enemies, if no enemies left then display small reward and display it, increase gold, display it, wait 1 a second and go back to 8, otherwise go to 5.
+ife<1thenprintz$:sleep4:gosub9:getkeyk$:run:elseifathenprint"{white}{down}{X} {cyan}1 dies":sleep1:f=f+1:n=n-1:ifn<1thenp%=1+r:print"{yellow}${white}"p%:g=g+p%:sleep1:goto8:elseif-agoto5
+
+
+7
+
+// Compute enemy's speed m
+m=fnf(v(r)):
+
+// if running away and enemy's faster than player and player is not wearing magic boots, then player loses x% enemry, a click sound is produce, 1 second wait and go back to 5
+// if running away and enemy is slower than player, then display "you escaped!", wait 2 seconds, increase player's speed, reduce boots if boots were available.
+ifa=0andm>vandb<1thenx%=1+m/9/z:printy$;x%;e$:e=e-x%:vol9:vol.:sleep1:goto5:elseifa=0thenprint"you escaped!":sleep2:v=v+1:b=b+(b>.)
+
+
+8
+
+// Initialization
+z$="{orange}{down}end":
+
+next:
+
+// Compute main quest reward
+p%=j*j*7+rnd(1)*9:
+
+// Increase t (which has an effect on the number of enemies encountered during the quests)
+ifk=.thent=t+.2-(t>2)*.2:
+
+// Compute q$ string ("back" or empty)
+q$=r$:
+
+// Display reward and produce a bell sound. Increase gold. Wait 2 secs. 
+print"reward {yellow}${white}{007}"p%:g=g+p%:sleep2:next:elseq$="":next:w(1)=w(1)+1:goto2
+
+
+9
+
+// [Stats display routine]
+// Display stats: energy, power, strength, speed, boots, armor, gold, score
+print"{down*2}{orange}S{pink}"e" {orange}po{white}"f"{cyan}sp{white}"v"{light green}bo{green}"b"{gray}ar{light gray}"z"{yellow}${white}"g:print"{down}{gray}score{white}";v+f-2:print:return:
+
+// More data
+data"{green}elves","{cyan}{reverse on}merchant{reverse off}{down}","{gray} 

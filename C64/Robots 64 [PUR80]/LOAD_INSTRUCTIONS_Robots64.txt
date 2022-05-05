@@ -1,0 +1,4 @@
+Just use any C64 emulator such as Vice or Z64K and either use the .prg or .D64 file.
+You can load the game into a real C64 by using many methods such as an SD2IEC card reader to load the .PRG or .D64 file.
+
+You can also load the .bas file through CBM Prg Studio and Vice.

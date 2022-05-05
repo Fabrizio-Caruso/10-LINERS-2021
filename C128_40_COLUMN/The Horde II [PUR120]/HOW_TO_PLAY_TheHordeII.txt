@@ -1,0 +1,9 @@
+THE HORDE II
+
+Goal:
+Defend the castle from the assualt of the horde.
+Try to reach the highest score and the highest level.
+
+Controls: 
+J (left), L (right), [space bar] fire.
+

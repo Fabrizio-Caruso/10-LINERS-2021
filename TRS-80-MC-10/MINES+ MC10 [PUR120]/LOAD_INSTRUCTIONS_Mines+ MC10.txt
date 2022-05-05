@@ -1,0 +1,15 @@
+You can use Virtual MC-10 Emulator (http://www.emu-france.com/?wpfb_dl=1005)
+
+Wait for the emulator to fully start the computer. Loading before may fail.
+
+You can load the .C10 file by 
+- typing CLOAD<enter>
+- selecting File->Play Cassette File
+- selecting the .C10 File
+OR
+you can load the source .txt file by
+- using the File->Quick Type option 
+- selecting the .txt file
+
+Type RUN to start the game.
+

@@ -1,0 +1,9 @@
+Just use any C128 emulator such as Vice or Z64K and either use the .prg or .D64 file.
+You can load the game into a real C128 by using many methods such as an SD2IEC card reader to load the .PRG or .D64 file.
+
+Remark: The game uses the 40 column screen (VIC-IIe).
+
+You can also load the .bas file through CBM Prg Studio and Vice.
+
+You may have to type RUN to start the game.
+

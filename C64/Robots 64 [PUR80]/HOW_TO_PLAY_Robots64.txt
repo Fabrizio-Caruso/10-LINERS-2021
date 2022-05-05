@@ -1,0 +1,14 @@
+ROBOTS 64
+
+The game concept is somehow similar to Gnome Robots (https://wiki.gnome.org/Apps/Robots)
+
+Goal:
+Escape the robots and lure them into the mines (X).
+Avoid robots, mines and walls.
+You can temporarily freeze them for a limited number of steps by using a limited number of freezing bombs.
+Every fifth killed robot you are awarded an extra freezing bomb.
+If you do not kill any robot for too long, you die anyway.
+
+Controls:
+Move with I J K L
+Activate freezing bomb: Z

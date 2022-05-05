@@ -1,0 +1,17 @@
+VIC FRUZZLE
+
+This is an old mini-puzzle game with 6 frogs and 7 pillars
+
+GOAL
+You want to reach the inverse of the initial configuration of the frogs.
+
+Constraints:
+Frogs can only jump by 1 or 2 steps.
+Right-facing green frogs can only jump to the right.
+Left-facing blue frogs can only jump to the left.
+Frogs can only jump onto the (sole) empty pillar.
+
+
+CONTROLS:
+Choose next frog to move with A B C D E F G
+Reset the game with X

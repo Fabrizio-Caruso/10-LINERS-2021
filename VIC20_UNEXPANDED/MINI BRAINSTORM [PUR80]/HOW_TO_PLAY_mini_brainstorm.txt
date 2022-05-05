@@ -1,0 +1,20 @@
+MINI BRAINSTORM
+
+This is the old mini puzzle "Missionaries and Cannibals".
+The name "Mini Brainstorm" comes from "Brainstorm", which is a Vic 20 port of "Missionaries and Cannibals".
+
+GOAL:
+On the left bank of the river you have 3 missionaries (clubs character) and 3 cannibals (red bullet character).
+The boat can take 1 or 2 people. The boat needs at least 1 person to cross the river.
+Cannibals eat missionaries on the same bank if they are the majority.
+You can only cross the river from bank A to bank B if the boat is already on the bank A.
+
+CONTROLS:
+Enter either one single letter (A B C D E F) or a combination of them and press <return>.
+
+Example 1:
+At game start, DE<return> -> move cannibals D and E to the right bank
+
+Example 2:
+At game start, AE<return> -> move missionary A and cannibal E to the right bank
+

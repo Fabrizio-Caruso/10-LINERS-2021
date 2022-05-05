@@ -1,0 +1,5 @@
+Use any VIC 20 emulator such as for example Vice and use the .PRG or .D64 file.
+You can load the game into a real VIC 20 by using many methods such as an SD2IEC card reader to load the .PRG or .D64 file.
+
+Remark: If not already done, you must set the emulator to emulate an UNEXPANDED VIC 20.
+
